@@ -27,8 +27,9 @@ echo -e ${CP}"       ╚═╝╚═════╝░╚═╝░░╚═╝�
 echo -e ${CP}"         This Script Will Install Apk On Your Device             #"                                           
 echo -e ${BLUE}"           https://facebook.com/ibraheem_haxor                   #"  
 echo -e ${YELLOW}"              Coded By: ibrahim Haxor                            #"
-echo -e ${CG}"              https://github.com/ibrahimhaxor                     #"
+echo -e ${CG}"              https://github.com/ibrahimhaxor                    #"
 echo -e ${RED}"################################################################## \n "
+
 
 
 echo -e ${CP}"[*] Tab "OK" on "Allow USB debugging" on Phone";
